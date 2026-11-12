@@ -1,5 +1,5 @@
 <!--
-  Guaita Historial v3.2 — ajuda · ajuda
+  Guaita Historial v3.2 — ajuda
   Copyright (c) 2026 SBS BiM Consulting, Jordi Subirós
   SPDX-License-Identifier: AGPL-3.0-only
   Distributed WITHOUT ANY WARRANTY. See the LICENSE file for details.
@@ -135,6 +135,11 @@ tr.err-row td{background:rgba(255,94,94,.06)}
 tr.row-multi td{background:rgba(255,181,70,.14)}
 
 main{flex:1 0 auto}
+#theme-btn{width:32px;padding:0;justify-content:center}
+#theme-btn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.i-moon{display:none}
+body.light .i-moon{display:block}
+body.light .i-sun{display:none}
 /* peu */
 footer.foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;border-top:1px solid var(--border);background:var(--bg-deep);font-size:11px;color:var(--text-dim2)}
 footer.foot a{color:var(--text-mut);text-decoration:underline;text-underline-offset:3px}
@@ -178,6 +183,67 @@ details p{padding:0 14px 12px;margin:0}
 .card b{display:block;color:var(--text);font-weight:600;margin-bottom:4px}
 .card p{font-size:12.5px;margin:0}
 
+
+/* ajuda · estil clàssic Guaita (capçalera, índex lateral, seccions numerades, targetes amb icones) */
+.hl-hero{background:var(--bg-panel);border-bottom:1px solid var(--border);padding:52px 24px 40px}
+.hl-hero .in{max-width:1180px;margin:0 auto}
+.hl-hero .tag{display:inline-block;margin-bottom:12px;font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--on-accent);background:var(--accent);padding:4px 10px;border-radius:20px}
+.hl-hero h1{font:600 clamp(32px,5vw,52px)/1.05 'IBM Plex Sans',sans-serif;letter-spacing:-.02em;color:var(--text);max-width:18ch}
+.hl-hero h1 em{font-style:normal;color:var(--accent-text)}
+.hl-hero .lead{margin-top:16px;font-size:16px;color:var(--text-mut);max-width:62ch}
+.hl-hero .langs{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.hl-wrap{max-width:1180px;width:100%;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:230px minmax(0,1fr);gap:48px}
+@media(max-width:860px){.hl-wrap{grid-template-columns:1fr;gap:0}.hl-toc{display:none}}
+.hl-toc{position:sticky;top:24px;align-self:start;padding-top:44px}
+.hl-toc .toc-t{font:500 10.5px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim2);margin-bottom:12px}
+.hl-toc ol{list-style:none;counter-reset:s}
+.hl-toc li{counter-increment:s}
+.hl-toc a{display:flex;gap:10px;align-items:baseline;padding:6px 8px;border-radius:6px;color:var(--text-mut);font-size:13px;border-left:2px solid transparent}
+.hl-toc a::before{content:counter(s,decimal-leading-zero);font:500 10px 'IBM Plex Mono',monospace;color:var(--text-dim2)}
+.hl-toc a:hover{background:var(--bg-hover);color:var(--text)}
+.hl-main{padding:44px 0 90px;min-width:0}
+.hl-main section{margin-bottom:58px;scroll-margin-top:24px}
+.hl-main section>h2{font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-text);margin-bottom:8px}
+.hl-main section>h2 .num{color:var(--text-dim2);margin-right:8px}
+.hl-main h3.st{display:flex;align-items:center;gap:14px;font:600 26px/1.15 'IBM Plex Sans',sans-serif;letter-spacing:-.01em;color:var(--text);margin-bottom:18px}
+.sico{width:40px;height:40px;flex:none;border-radius:8px;background:var(--bg-surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center}
+.sico svg,.card .ci svg{width:20px;height:20px;fill:none;stroke:var(--accent-text);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.hl-main p{margin-bottom:14px;color:var(--text-mid);font-size:14px;line-height:1.7}
+.hl-main p.muted{color:var(--text-mut)}
+.hl-main h4{font:600 15px 'IBM Plex Sans',sans-serif;color:var(--text);margin:24px 0 8px}
+.hl-main b{color:var(--text)}
+.hl-main code{font:12px 'IBM Plex Mono',monospace;background:var(--bg-panel);border:1px solid var(--border-soft);padding:1px 6px;border-radius:4px;color:var(--text-soft)}
+.hl-main kbd{font:12px 'IBM Plex Mono',monospace;background:var(--bg-surface);border:1px solid var(--border);border-bottom-width:2px;border-radius:5px;padding:1px 7px;color:var(--accent-text);white-space:nowrap}
+.note{border:1px solid var(--border);border-left:3px solid var(--cyan);background:var(--bg-panel);border-radius:0 6px 6px 0;padding:14px 16px;margin:18px 0;font-size:13.5px;color:var(--text-mid)}
+.note.warn{border-left-color:var(--warn)}
+.note.stop{border-left-color:var(--danger)}
+.note .nt{font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--text-mut);margin-bottom:5px}
+.note.warn .nt{color:var(--warn)}
+.hl-main ol.steps{list-style:none;counter-reset:step;margin:8px 0 16px}
+.hl-main ol.steps li{counter-increment:step;position:relative;padding:12px 0 12px 46px;border-bottom:1px solid var(--border-soft);font-size:14px;color:var(--text-mid)}
+.hl-main ol.steps li:last-child{border-bottom:none}
+.hl-main ol.steps li::before{content:counter(step);position:absolute;left:0;top:11px;width:30px;height:30px;border-radius:8px;background:var(--bg-surface);color:var(--accent-text);font:600 13px 'IBM Plex Mono',monospace;display:flex;align-items:center;justify-content:center;border:1px solid var(--border)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:12px 0 6px}
+.card{border:1px solid var(--border);background:var(--bg-panel);border-radius:8px;padding:16px}
+.card .ci{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;background:var(--bg-surface)}
+.card h4{margin:0 0 4px;font-size:14.5px}
+.card p{font-size:12.5px;color:var(--text-mut);margin:0;line-height:1.55}
+table.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 18px}
+table.tbl th{text-align:left;padding:9px 12px;background:var(--bg-panel);color:var(--text-mut);font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--border)}
+table.tbl td{padding:9px 12px;border-bottom:1px solid var(--border-soft);vertical-align:top;color:var(--text-mid)}
+table.tbl td:first-child{color:var(--text);white-space:nowrap}
+details{border:1px solid var(--border);border-radius:6px;background:var(--bg-panel);margin:8px 0}
+details summary{padding:11px 14px;cursor:pointer;color:var(--text);font-weight:500;font-size:13.5px}
+details[open] summary{color:var(--accent-text)}
+details p{padding:0 14px 12px;margin:0;font-size:13px}
+.hl-foot-links{margin-top:28px;font-size:12.5px;color:var(--text-dim2)}
+.hl-foot-links a{color:var(--text-mut);text-decoration:underline;text-underline-offset:3px}
+#theme-btn{width:32px;padding:0;justify-content:center}
+#theme-btn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.i-moon{display:none}
+body.light .i-moon{display:block}
+body.light .i-sun{display:none}
+
 </style>
 </head>
 <body>
@@ -188,95 +254,81 @@ details p{padding:0 14px 12px;margin:0}
   <div class="hdr-r">
     <a class="btn ghost" href="130_HLP_Guaita_RVT_Historial-ajuda_32.html" lang="ca">Ajuda</a>
     <a class="btn ghost" href="../pagesENG/130_HLP_Guaita_RVT_Historial-ajuda_32-ENG.html" lang="en">EN</a>
-    <button id="theme-btn" class="btn ghost" type="button" aria-pressed="false"></button>
+    <button id="theme-btn" class="btn ghost" type="button" aria-pressed="false" aria-label="Canvia el tema"><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
   </div>
 </header>
-<main class="help">
-
-<h1>Ajuda de Guaita Historial</h1>
-<p class="lead">Guaita Historial llegeix l'historial de desats dels fitxers <code>.rvt</code> i <code>.rte</code> i et mostra qui ha desat el model i quan, per a un fitxer o per a carpetes senceres. Tot passa dins del navegador.</p>
-
-<h2>1. Què mostra</h2>
-<p>Cada fitxer <code>.rvt</code> o <code>.rte</code> guarda a dins una taula amb tots els desats del model: en quin ordre, en quin moment i amb quin nom d'usuari. L'eina llegeix aquesta taula sense obrir el model en cap programa.</p>
-<ul>
-  <li><b>Historial complet:</b> data, hora i usuari de cada desat.</li>
-  <li><b>Recompte per usuari:</b> els desats de cada persona, de més a menys.</li>
-  <li><b>Robustesa temporal:</b> abast, dies actius, sessions i concentració final (vegeu la secció 5).</li>
-  <li><b>Exportació:</b> un fitxer TSV, per obrir a Excel.</li>
-</ul>
-
-<h2>2. Com començar</h2>
-<ol>
-  <li><b>Opció 1 · Fitxers.</b> Tria un o més fitxers <code>.rvt</code>. Pots seleccionar-ne diversos amb Ctrl o Cmd.</li>
-  <li><b>Opció 2 · Carpeta.</b> Tria una carpeta i l'eina hi buscarà els fitxers. Amb <b>subcarpetes</b> activat, també mira dins les carpetes internes.</li>
-  <li>Per incloure plantilles, activa <b>incloure .rte</b>. Per defecte només es llegeixen els <code>.rvt</code>.</li>
+<header class="hl-hero"><div class="in"><span class="tag">Guaita Apps · Historial · v3.2</span><h1>Ajuda de <em>Guaita Historial</em></h1><p class="lead">Qui ha desat el model, quan i amb quina regularitat. Guia d'ús de la versió 3.2, amb totes les seccions i les dues versions de l'eina.</p><div class="langs"><a class="btn" href="guaitaRVThistorial_32.html">Aplicació · CAT</a><a class="btn" href="../pagesENG/guaitaRVThistorial_32-ENG.html">Application · ENG</a><a class="btn" href="../pagesENG/130_HLP_Guaita_RVT_Historial-ajuda_32-ENG.html">Manual · ENG</a></div></div></header>
+<div class="hl-wrap"><nav class="hl-toc"><div class="toc-t">Índex</div><ol><li><a href="#s1">Què és Guaita Historial</a></li><li><a href="#s2">Com començar</a></li><li><a href="#s3">La interfície</a></li><li><a href="#s4">La taula de resultats</a></li><li><a href="#s5">Robustesa temporal</a></li><li><a href="#s6">Marcar fitxers amb més d'un usuari</a></li><li><a href="#s7">Durada mínima esperada</a></li><li><a href="#s8">Exportar a TSV</a></li><li><a href="#s9">Netejar i acumulació</a></li><li><a href="#s10">Privadesa</a></li><li><a href="#s11">Resolució de problemes</a></li><li><a href="#s12">Llicència i crèdits</a></li></ol></nav><main class="hl-main"><section id="s1"><h2><span class="num">01</span>Secció</h2><h3 class="st"><span class="sico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></span>Què és Guaita Historial</h3><p class="lead">Guaita Historial llegeix l'historial de desats que els fitxers <code>.rvt</code> i <code>.rte</code> porten a dins i mostra qui ha desat el model, quan i amb quina regularitat.</p>
+<div class="cards">
+  <div class="card"><div class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M9 4v16"/></svg></div><h4>Historial complet</h4><p>Data, hora i usuari de cada desat del fitxer.</p></div>
+  <div class="card"><div class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5A6.5 6.5 0 0 1 21.5 20"/></svg></div><h4>Desats per usuari</h4><p>El recompte de desats de cada persona, de més a menys.</p></div>
+  <div class="card"><div class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6M12 2v3"/></svg></div><h4>Robustesa temporal</h4><p>Abast, dies actius, sessions i concentració final.</p></div>
+  <div class="card"><div class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg></div><h4>Exportació TSV</h4><p>Una fila per desat, a punt per obrir a Excel.</p></div>
+</div>
+<p>Tot passa dins del navegador. L'eina no obre el model en cap programa: només llegeix la taula de desats i les metadades del fitxer.</p></section>
+<section id="s2"><h2><span class="num">02</span>Secció</h2><h3 class="st"><span class="sico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4z"/></svg></span>Com començar</h3><ol class="steps">
+  <li><b>Opció 1 · Fitxers.</b> Tria un o més fitxers <code>.rvt</code>. Per seleccionar-ne diversos, manté premuda la tecla <kbd>Ctrl</kbd> (Windows) o <kbd>Cmd</kbd> (Mac).</li>
+  <li><b>Opció 2 · Carpeta.</b> Tria una carpeta i l'eina hi buscarà els fitxers. Amb <b>subcarpetes</b> activat, també mira dins de les carpetes internes.</li>
+  <li><b>Incloure .rte.</b> Per defecte només es llegeixen els <code>.rvt</code>. Activa aquesta casella per incloure també les plantilles <code>.rte</code>, que tenen el mateix historial de desats.</li>
 </ol>
-<p>L'anàlisi comença sola en triar els fitxers. El progrés apareix a la barra d'estat de dalt, i en acabar, la taula queda plena.</p>
-<div class="callout">Els fitxers que no són <code>.rvt</code> ni <code>.rte</code> s'ignoren. Si la selecció no conté cap fitxer vàlid, l'eina t'ho indica.</div>
-
-<h2>3. La interfície</h2>
-<ul>
-  <li><b>Capçalera:</b> Ajuda, canvi d'idioma i mode clar o fosc.</li>
-  <li><b>Càrrega:</b> les dues opcions de càrrega, Netejar i Exporta TSV.</li>
-  <li><b>Marcatge:</b> el botó «Marca fitxers amb més d'un usuari», la «Durada mínima esperada» i els «Usuaris excepció».</li>
-  <li><b>Taula:</b> una fila per fitxer analitzat.</li>
-</ul>
-<p>Netejar buida la taula i les seleccions per començar de zero. Mentre no el premis, les anàlisis s'acumulen.</p>
-
-<h2>4. La taula de resultats</h2>
-<table>
+<p>L'anàlisi comença en triar els fitxers. El progrés apareix a la barra d'estat i, en acabar, la taula queda plena.</p>
+<div class="note"><div class="nt">Nota</div>Els fitxers que no són <code>.rvt</code> ni <code>.rte</code> s'ignoren. Si la selecció no conté cap fitxer vàlid, l'eina t'ho indica.</div></section>
+<section id="s3"><h2><span class="num">03</span>Secció</h2><h3 class="st"><span class="sico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></svg></span>La interfície</h3><table class="tbl">
+  <tr><th>Zona</th><th>Què fa</th></tr>
+  <tr><td>Capçalera</td><td>Logotip, versió, enllaç a l'ajuda, canvi d'idioma (CA/EN) i botó sol/lluna per al mode clar o fosc.</td></tr>
+  <tr><td>Opció 1 i Opció 2</td><td>Càrrega de fitxers o de carpeta. Inclou les caselles <b>subcarpetes</b> i <b>incloure .rte</b>.</td></tr>
+  <tr><td>Netejar</td><td>Buida la taula, les seleccions i el resum. Vegeu la secció 09.</td></tr>
+  <tr><td>Exporta TSV</td><td>Descarrega la taula en format de text per a Excel. Activat només quan hi ha resultats.</td></tr>
+  <tr><td>Barra de marcatge</td><td>Botó <b>Marca fitxers amb més d'un usuari</b>, <b>Durada mínima esperada</b> i <b>Usuaris excepció</b>.</td></tr>
+  <tr><td>Resum</td><td>Llista els fitxers marcats per cada criteri.</td></tr>
+  <tr><td>Taula</td><td>Una fila per fitxer analitzat. Vegeu la secció 04.</td></tr>
+</table></section>
+<section id="s4"><h2><span class="num">04</span>Secció</h2><h3 class="st"><span class="sico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M9 4v16"/></svg></span>La taula de resultats</h3><table class="tbl">
   <tr><th>Columna</th><th>Què mostra</th></tr>
-  <tr><td>Fitxer</td><td>El nom del fitxer, la mida i el <i>build</i> del programa que el va desar.</td></tr>
-  <tr><td>Carpeta</td><td>La carpeta d'origen, o «Selecció directa» si l'has triat com a fitxer solt.</td></tr>
-  <tr><td>Desats i robustesa</td><td>El nombre total de desats, el valor declarat al fitxer («decl.») i els indicadors de la secció 5.</td></tr>
-  <tr><td>Project Info</td><td>Les metadades del fitxer, llegides de <code>BasicFileInfo</code>.</td></tr>
-  <tr><td>Desats per usuari</td><td>Cada usuari amb el nombre de desats que ha fet, de més a menys.</td></tr>
-  <tr><td>Historial</td><td>La llista de desats, amb data, hora i usuari.</td></tr>
-</table>
-<div class="callout">Les dates es mostren com <code>dd/mm/aaaa hh:mm:ss</code>, en l'hora local del teu equip.</div>
-
-<h2>5. Robustesa temporal</h2>
-<p>El nombre de desats mesura hàbits de desat, no hores de feina: es pot desar molt en poc temps. Per això, els indicadors més útils són aquests:</p>
-<ul>
-  <li><b>Abast:</b> temps entre el primer i el darrer desat.</li>
-  <li><b>Dies actius:</b> dies naturals diferents amb algun desat.</li>
-  <li><b>Sessions:</b> grups de desats separats per més de 4 hores.</li>
-  <li><b>Últ. 48 h:</b> percentatge de desats fets dins les 48 hores abans del darrer. Un valor alt (80 % o més) indica que la feina es va concentrar al final.</li>
-</ul>
-<p>Si el fitxer es va crear a partir d'una plantilla, l'abast mesura l'edat del document i no el temps de feina. Abans de treure conclusions, cal saber com es va generar el fitxer.</p>
-<p>Si el valor «decl.» no coincideix amb el total de desats, la cel·la es marca en ambre. Pot indicar que el fitxer ha estat modificat per una altra eina.</p>
-<div class="callout warn"><b>Desar no és treballar.</b> Aquests indicadors són pistes per revisar, no proves. Una anomalia s'ha de contrastar amb altres evidències.</div>
-
-<h2>6. Marcar fitxers amb més d'un usuari</h2>
-<ol>
-  <li>Prem <b>Marca fitxers amb més d'un usuari</b>. Les files que compleixin la condició es ressalten en groc i el resum de dalt indica quants són.</li>
-  <li>Al camp <b>Usuaris excepció</b> pots escriure els noms d'usuari que no s'han de comptar (per exemple <code>admin</code>, <code>backup</code> o el teu gestor BIM), separats per comes.</li>
-  <li>El recompte s'actualitza a l'instant: un fitxer només queda marcat si té més d'un usuari un cop descomptades les excepcions.</li>
+  <tr><td>Fitxer</td><td>Nom, mida i <i>build</i> del programa que el va desar.</td></tr>
+  <tr><td>Carpeta</td><td>La carpeta d'origen, o «Selecció directa» si el fitxer s'ha triat sol.</td></tr>
+  <tr><td>Desats i robustesa</td><td>Total de desats, valor declarat («decl.») i els indicadors de la secció 05.</td></tr>
+  <tr><td>Project Info</td><td>Metadades del fitxer, llegides de <code>BasicFileInfo</code>.</td></tr>
+  <tr><td>Desats per usuari</td><td>Cada usuari amb el nombre de desats, de més a menys.</td></tr>
+  <tr><td>Historial</td><td>Llista de desats amb data, hora i usuari. Format <code>dd/mm/aaaa hh:mm:ss</code>, en l'hora local de l'equip.</td></tr>
+</table></section>
+<section id="s5"><h2><span class="num">05</span>Secció</h2><h3 class="st"><span class="sico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6M12 2v3"/></svg></span>Robustesa temporal</h3><p>El nombre de desats mesura hàbits de desat, no hores de feina: es pot desar molt en poc temps. Per això, els indicadors més útils són aquests:</p>
+<div class="cards">
+  <div class="card"><div class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6M12 2v3"/></svg></div><h4>Abast</h4><p>Temps entre el primer i el darrer desat.</p></div>
+  <div class="card"><div class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M9 4v16"/></svg></div><h4>Dies actius</h4><p>Dies naturals diferents amb algun desat.</p></div>
+  <div class="card"><div class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><h4>Sessions</h4><p>Grups de desats separats per més de 4 hores.</p></div>
+  <div class="card"><div class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L2 20h20z"/><path d="M12 10v4M12 17h.01"/></svg></div><h4>Últ. 48 h</h4><p>Percentatge de desats fets dins les 48 hores abans del darrer. A partir del 80 % es marca en ambre.</p></div>
+</div>
+<div class="note warn"><div class="nt">Desar no és treballar</div>Aquests indicadors són pistes per revisar, no proves. Una anomalia s'ha de contrastar amb altres evidències.</div>
+<p>Si el fitxer es va generar a partir d'una plantilla, l'abast mesura l'edat del document i no el temps de feina. Abans de treure conclusions, cal saber com es va crear el fitxer.</p>
+<p>Si el valor <b>decl.</b> no coincideix amb el total de desats, la xifra es marca en ambre. Pot indicar que el fitxer ha estat modificat per una altra eina.</p></section>
+<section id="s6"><h2><span class="num">06</span>Secció</h2><h3 class="st"><span class="sico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5A6.5 6.5 0 0 1 21.5 20"/></svg></span>Marcar fitxers amb més d'un usuari</h3><ol class="steps">
+  <li>Prem <b>Marca fitxers amb més d'un usuari</b>. Les files que compleixen la condició es ressalten en groc i el resum les enumera.</li>
+  <li>Al camp <b>Usuaris excepció</b>, escriu els noms que no s'han de comptar (per exemple <code>admin</code>, <code>backup</code> o el gestor BIM de l'equip).</li>
+  <li>El recompte s'actualitza a l'instant. Un fitxer només queda marcat si té més d'un usuari després de descomptar les excepcions.</li>
 </ol>
-<p>La <b>Durada mínima esperada</b> marca en ambre els fitxers amb un abast inferior als dies que indiquis.</p>
-
-<h2>7. Exportar a TSV</h2>
-<p>El botó <b>Exporta TSV</b> descarrega un fitxer de text separat per tabulacions, amb <b>una fila per cada desat</b>. Les columnes són: Fitxer, Carpeta, Mida (MB), Increment, Data i hora, Modificat per, Total desats (fitxer), Primer desat, Darrer desat, Abast (dies), Dies actius, Sessions, Concentració 48h (%), Build i Project Info.</p>
-<p>El fitxer es desa com <code>RVT_Historial_aaaa-mm-dd.tsv</code>. Inclou la marca de codificació UTF-8, perquè els accents es vegin bé en obrir-lo amb Excel.</p>
-
-<h2>8. Privadesa</h2>
-<div class="callout"><b>Tot passa al teu equip.</b> El processament és local al navegador: cap fitxer ni cap dada d'historial s'envia enlloc, i l'eina funciona sense connexió a internet.</div>
-
-<h2>9. Resolució de problemes</h2>
-<details><summary>«No s'han trobat fitxers .rvt/.rte vàlids segons la selecció.»</summary>
-<p>La selecció no contenia cap fitxer <code>.rvt</code>, o els que hi havia quedaven fora del filtre. Si has triat una carpeta amb fitxers en subcarpetes, activa <b>subcarpetes</b>. Si vols plantilles, activa <b>incloure .rte</b>.</p></details>
+<div class="note"><div class="nt">Format de la llista</div>Els noms es poden separar amb comes, punts i comes o salts de línia. No distingeix majúscules i minúscules.</div></section>
+<section id="s7"><h2><span class="num">07</span>Secció</h2><h3 class="st"><span class="sico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17L17 3l4 4L7 21z"/><path d="M7 13l2 2M10 10l2 2M13 7l2 2"/></svg></span>Durada mínima esperada</h3><p>Amb el camp <b>Durada mínima esperada</b> indiques, en dies, l'abast mínim que consideres normal per al projecte. Els fitxers amb un abast inferior es marquen amb <b>⚠</b> a la columna de robustesa i en groc al resum.</p>
+<p>Deixa el camp buit si no vols aquest criteri. Un valor de zero no marca cap fitxer.</p></section>
+<section id="s8"><h2><span class="num">08</span>Secció</h2><h3 class="st"><span class="sico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg></span>Exportar a TSV</h3><p>El botó <b>Exporta TSV</b> descarrega un fitxer de text separat per tabulacions, amb <b>una fila per cada desat</b>. Les columnes són:</p>
+<p><code>Fitxer · Carpeta · Mida (MB) · Increment · Data i hora · Modificat per · Total desats (fitxer) · Primer desat · Darrer desat · Abast (dies) · Dies actius · Sessions · Concentració 48h (%) · Build · Project Info</code></p>
+<p>El fitxer es desa com <code>RVT_Historial_aaaa-mm-dd.tsv</code> i porta la marca UTF-8, perquè els accents es vegin bé en obrir-lo amb Excel.</p></section>
+<section id="s9"><h2><span class="num">09</span>Secció</h2><h3 class="st"><span class="sico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>Netejar i acumulació</h3><p>Cada anàlisi s'afegeix a la taula existent: els resultats s'acumulen entre seleccions. Si tries de nou un fitxer que ja hi era, s'analitza una altra vegada i apareix com una fila nova.</p>
+<p><b>Netejar</b> buida la taula, les seleccions, el resum i l'estat. Després pots començar des de zero.</p></section>
+<section id="s10"><h2><span class="num">10</span>Secció</h2><h3 class="st"><span class="sico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>Privadesa</h3><div class="note"><div class="nt">Tot es queda al teu equip</div>El processament és local al navegador. Cap fitxer ni cap dada d'historial s'envia enlloc, i l'eina funciona sense connexió a internet. Les pàgines no carreguen fonts ni recursos externs: IBM Plex va incrustat.</div></section>
+<section id="s11"><h2><span class="num">11</span>Secció</h2><h3 class="st"><span class="sico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L11 20l-3-3z"/><path d="M3 21l5-5"/></svg></span>Resolució de problemes</h3><details><summary>«No s'han trobat fitxers .rvt/.rte vàlids segons la selecció.»</summary>
+<p>La selecció no contenia cap fitxer <code>.rvt</code>, o els que hi havia quedaven fora del filtre. Si has triat una carpeta amb fitxers a les subcarpetes, activa <b>subcarpetes</b>. Si vols plantilles, activa <b>incloure .rte</b>.</p></details>
 <details><summary>«No s'ha trobat la taula d'increments»</summary>
-<p>El fitxer no té historial de desats registrat: pot ser un model no col·laboratiu o desat d'una manera que no genera aquesta taula. La fila apareix igualment, però sense historial.</p></details>
+<p>El fitxer no té historial de desats registrat: pot ser un model no col·laboratiu o desat d'una manera que no genera aquesta taula. La fila apareix igualment, sense historial.</p></details>
 <details><summary>Una fila surt amb error</summary>
-<p>El fitxer pot estar malmès, encriptat o no ser un <code>.rvt</code> o <code>.rte</code> vàlid. La resta de la selecció es processa igualment; només aquell fitxer queda marcat amb el missatge d'error.</p></details>
+<p>El fitxer pot estar malmès, xifrat o no ser un <code>.rvt</code> o <code>.rte</code> vàlid. La resta de la selecció es processa igualment; només aquell fitxer queda marcat.</p></details>
 <details><summary>«No s'ha trobat Project Info»</summary>
 <p>El fitxer no exposa metadades a <code>BasicFileInfo</code> que l'eina pugui llegir. L'historial i el recompte per usuari es mostren igualment, si existeixen.</p></details>
 <details><summary>Les hores no quadren</summary>
-<p>Les dates es mostren en l'hora local del teu equip. Si el model es va desar en un altre fus horari, té en compte la diferència en interpretar-les.</p></details>
-<details><summary>Vull començar de zero</summary>
-<p>Prem <b>Netejar</b>. Buida la taula, les seleccions i el resum.</p></details>
-
-</main>
+<p>Les dates es mostren en l'hora local del teu equip. Si el model es va desar en un altre fus horari, té en compte la diferència en interpretar-les.</p></details></section>
+<section id="s12"><h2><span class="num">12</span>Secció</h2><h3 class="st"><span class="sico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>Llicència i crèdits</h3><p>Guaita Historial és programari lliure sota la <b>GNU Affero General Public License v3.0 only</b> (<code>AGPL-3.0-only</code>). Copyright © 2026 SBS BiM Consulting, Jordi Subirós.</p>
+<p>IBM Plex es distribueix sota la <b>SIL Open Font License 1.1</b> (© IBM Corp.) i va incrustat sense modificacions. Text complet de la llicència al fitxer <code>LICENSE</code> del repositori.</p></section>
+<p class="hl-foot-links">Ajuda de Guaita Historial v3.2 · Repositori: github.com/subi2/guaitaRVThistorial</p></main></div>
 <footer class="foot">
   <span>SBS BiM Consulting · Jordi Subirós · AGPL-3.0-only · Versió 3.2</span>
   <span><a href="../index.html">Presentació</a> · <a href="https://github.com/subi2/guaitaRVThistorial">GitHub</a></span>
@@ -284,10 +336,11 @@ details p{padding:0 14px 12px;margin:0}
 <script>
 (function(){
   var b = document.getElementById('theme-btn');
-  function lab(){ var on = document.body.classList.contains('light'); b.textContent = on ? 'Mode clar' : 'Mode fosc'; b.setAttribute('aria-pressed', String(on)); }
+  try{ if(localStorage.getItem('guaita-historial-tema')==='clar') document.body.classList.add('light'); }catch(e){}
+  function sync(){ var on = document.body.classList.contains('light'); b.setAttribute('aria-pressed', String(on)); }
   b.addEventListener('click', function(){ var on = !document.body.classList.contains('light'); document.body.classList.toggle('light', on);
-    try{ localStorage.setItem('guaita-historial-tema', on ? 'clar' : 'fosc'); }catch(e){} lab(); });
-  lab();
+    try{ localStorage.setItem('guaita-historial-tema', on ? 'clar' : 'fosc'); }catch(e){} sync(); });
+  sync();
 })();
 </script>
 </body>
