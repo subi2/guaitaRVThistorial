@@ -7,6 +7,8 @@
 
 # GUAITA·HISTORIAL — Guaita Historial
 
+![Guaita Historial](social-preview.png)
+
 `v3.2 · User guide`
 
 ## Who saved the model, and when — read from the file itself.
