@@ -7,7 +7,7 @@
 
 # GUAITA·HISTORIAL — Guaita Historial
 
-![Guaita Historial](social-preview.png)
+![Guaita Historial](readme-banner.png)
 
 **[English](#english)** · **[Català](#català)**
 
@@ -16,8 +16,6 @@
 <a id="english"></a>
 
 # English
-
-![Guaita Historial](social-preview.png)
 
 `v3.2 · User guide`
 
